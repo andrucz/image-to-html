@@ -42,8 +42,8 @@ public final class ImageToHTMLConverter {
 		out.println("<html>");
 		out.println("<head>");
 		out.println("<style type=\"text/css\">");
-		out.println("table {border-style: none; border-spacing: 0px; padding: 0px;}");
-		out.println("td {width: 1px; height: 1px;}");
+		out.println("table {border-collapse: collapse; border-spacing: 0;}");
+		out.println("table td {padding: 0; width: 1; height: 1;}");
 		out.println("</style>");
 		out.println("</head>");
 		
