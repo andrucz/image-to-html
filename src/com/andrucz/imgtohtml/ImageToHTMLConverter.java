@@ -1,13 +1,38 @@
 package com.andrucz.imgtohtml;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintStream;
+
+import javax.imageio.ImageIO;
 
 import static com.andrucz.commons.check.Checks.*;
 
 public final class ImageToHTMLConverter {
 
 	private ImageToHTMLConverter() {
+	}
+	
+	public static void write(File file, PrintStream out) throws IOException {
+		BufferedImage image = ImageIO.read(file);
+		write(image, out);
+	}
+	
+	public static void write(File file, File dest) throws IOException {
+		BufferedImage image = ImageIO.read(file);
+		write(image, dest);
+	}
+	
+	public static void write(BufferedImage image, File dest) throws FileNotFoundException {
+		PrintStream out = new PrintStream(dest);
+		try {
+			write(image, out);
+			out.flush();
+		} finally {
+			out.close();
+		}
 	}
 	
 	public static void write(BufferedImage image, PrintStream out) {
