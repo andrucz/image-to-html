@@ -69,9 +69,9 @@ public final class ImageToHTMLConverter {
 				}
 				
 				if (j == w - 1 || lastRGB != rgb) {
-					int r = (rgb >> 16) & 0xFF;
-					int g = (rgb >> 8) & 0xFF;
-					int b = rgb & 0xFF;
+					int r = (lastRGB >> 16) & 0xFF;
+					int g = (lastRGB >> 8) & 0xFF;
+					int b = lastRGB & 0xFF;
 					
 					out.print("<td bgcolor=\"");
 					writeHexColor(r, g, b, out);
