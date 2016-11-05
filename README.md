@@ -1,13 +1,13 @@
 image-to-html
 =============
 
-Transforms an image into a HTML table. For nothing.
+Transforms an image into an HTML table (each pixel is transformed into a table cell). Just for fun (if it can be considered fun).
 
 Example of use
 --------------
 
 ```java
-File image = new File("test/angry-monkey.jpg");
-File destination = new File("test/result.html");
-ImageToHTMLConverter.write(image, destination);
+File image = new File("angry-monkey.jpg");
+File destination = new File("result.html");
+ImageToHTMLConverter.convert(image, destination);
 ```
